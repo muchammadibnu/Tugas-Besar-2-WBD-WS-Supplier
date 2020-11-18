@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  p there is documentation for use
+
+  h2 LIST ENDPOINT
+  b how to use: http://localhost:3000/{endpoint} , misal mau dapet daftar bahan berarti GET http://localhost:3000/getDaftarBahan <br>
+
+  h3 GET /getDaftarBahan -> untuk mengambil data daftar bahan
+
+  h3 response:
+  b server status: 200 berhasil<br>
+  <div>
+  code { <br>"daftarbahan" : [{"namaBahan": "garam", "hargaSatuan": 10000}]<br> }<br>
+  </div>
+  <br>
+  
+  b server status : 500 server error -> mungkin salah username/password di db.js<br>
+  <div>
+  code {<br>"message" : "connection error!"<br>}<br>
+  </div>
+  <br>
+
+  h3 POST /beliBahan -> untuk membeli bahan
+  h3 request:
+  <div>
+  code {<br>"uang" : 10000,<br>"bahan" : [{"nama":"garam", "jumlah": 10}, {"nama":"gula", "jumlah": 100}]<br>}<br>
+  </div>
+  <br>
+
+  h3 response:
+  h4 jika berhasil:
+
+  b server status : 200<br>
+  <div>
+  code {<br>"uang" : 10000,<br>"message" : "berhasil"<br>}<br>
+  </div>
+  <br>
+
+  h4 jika gagal:
+
+  b server status : 400 -> uangnya gacukup<br>
+  <div>
+  code {<br>"uang" : 10000,<br>"message" : "gagal"<br>}<br>
+  </div>
+  <br>
+
+  b server status : 406 -> ada nama bahan yang salah/ada nama bahan yang gaada di database/jumlah yang diinput negatif<br>
+  <div>
+  code {<br>"message" : "bahan gulas tidak ditemukan"<br>}<br>
+  </div>
+  <br>
+
+  b server status : 500 server error -> mungkin salah username/password di db.js<br>
+  <div>
+  code {<br>"message" : "connection error!"<br>}<br>
+  </div>
