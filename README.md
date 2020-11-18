@@ -3,21 +3,22 @@
 Respository yang berisi microservice Web Service Supplier
 
 ## Prerequisite
-install dependencies:
+#### install dependencies:
 
-$ cd expressjs
-$ npm install
+> cd expressjs
+> npm install
 
-On MacOS or Linux, run the app with this command:
+#### how to run program:
+#### On MacOS or Linux, run the app with this command:
 
-$ DEBUG=myapp:* npm start
+> DEBUG=myapp:* npm start
 
-On Windows Command Prompt, use this command:
+#### On Windows Command Prompt, use this command:
 
 > set DEBUG=myapp:* & npm start
 
-On Windows PowerShell, use this command:
+#### On Windows PowerShell, use this command:
 
-PS> $env:DEBUG='myapp:*'; npm start
+> $env:DEBUG='myapp:*'; npm start
 
-Then load http://localhost:3000/ in your browser to access the app.
+##### Then load http://localhost:3000/ in your browser to access the app.
